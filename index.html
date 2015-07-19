@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <title>Prepaid Loading Station</title>
+  </head>
+
+  <body ng-app="LoadCentral" ng-cloak>
+    <div ng-controller="LoadController">
+      <h2>&nbsp;</h2>
+      <div class='container'>
+        <div class="container col-md-4 load-option">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              <h4> Php 100 Load </h4>
+            </div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label>Cellphone Number</label>
+                <input id="input-100" class="form-control" ng-model="cellPhoneNumber100"/>
+              </div>
+              <div class="form-group">
+                <button id="btn-100" class="btn btn-warning form-control" ng-click="load(cellPhoneNumber100, 100)">
+                  BUY 100
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container col-md-4 load-option">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h4> Php 300 Load </h4>
+            </div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label>Cellphone Number</label>
+                <input class="form-control" ng-model="cellPhoneNumber300"/>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-info form-control" ng-click="load(300)">
+                  BUY 300
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container col-md-4 load-option">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h4> Php 500 Load </h4>
+            </div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label>Cellphone Number</label>
+                <input class="form-control" ng-model="cellPhoneNumber500"/>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-success form-control" ng-click="load(500)">
+                  BUY 500
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="congrats-div" ng-show="showMessage">
+          <h3 class="text-success">&#10004; Congratulations!</h3>
+          <span class="text-success">
+            Successfully loaded <b> {{ successNumber }} </b> worth of load to <b> {{ successAmount }} </b> 
+          </span>
+        </div>
+
+        <h3> Loading History </h3>
+        <table class="table table-bordered">
+          <tr>
+            <th>Cellphone Number</th>
+            <th>Amount</th>
+          </tr>
+
+          <tr ng-repeat="item in transactions">
+            <td>{{ item.number }}</td>
+            <td>{{ item.amount }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app/js/app.js"></script>
+    <script src="app/js/load_controller.js"></script>
+  </body>
+</html>
