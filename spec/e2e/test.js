@@ -48,7 +48,7 @@ describe('LoadController', function() {
     });
   });
 
-  describe('the Buy 100 is clicked', function() {
+  describe("the 'Buy 100' button is clicked", function() {
 
     var hundredInput = element(by.css('#input-100'));
     var hundredBtn = element(by.css('#btn-100'));
@@ -96,3 +96,25 @@ describe('LoadController', function() {
     });
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
