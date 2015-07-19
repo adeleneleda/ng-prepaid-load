@@ -8,7 +8,7 @@ app.controller('LoadController', ['$scope', function($scope) {
   $scope.successAmount = null;
 
   $scope.load = function(number, amount) {
-    if(typeof(number) !== 'undefined') {
+    if(typeof(number) !== 'undefined' && number != '') {
       $scope.transactions.push({ number: number, amount: amount });
       
       $scope.successNumber = number;
@@ -16,6 +16,8 @@ app.controller('LoadController', ['$scope', function($scope) {
       $scope.showMessage = true;
 
       $scope.cellPhoneNumber100 = '';
+    } else {
+      $scope.showMessage = false;
     }
   };
 }]);

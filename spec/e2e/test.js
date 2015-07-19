@@ -58,19 +58,7 @@ describe('LoadController', function() {
 
     var cellNumber = '09170331994';
 
-    describe('button clicked with empty phone number', function() {
-
-      beforeEach(function() {
-        hundredInput.sendKeys('');
-        hundredBtn.click();
-      });
-
-      it('should not display the success message', function() {
-        expect(congratsMessage.isDisplayed()).toBeFalsy();
-      });
-    });
-
-    describe('button clicked with phone number', function() {
+    describe('button was clicked with phone number', function() {
       beforeEach(function() {
         hundredInput.sendKeys(cellNumber);
         hundredBtn.click();
@@ -92,6 +80,18 @@ describe('LoadController', function() {
 
       it('should add the new transaction to loading history', function() {
         expect(loadingHistory.count()).toBe(1);
+      });
+    });
+
+    describe('button was clicked with empty phone number', function() {
+
+      beforeEach(function() {
+        hundredInput.sendKeys('');
+        hundredBtn.click();
+      });
+
+      it('should not display the success message', function() {
+        expect(congratsMessage.isDisplayed()).toBeFalsy();
       });
     });
   });

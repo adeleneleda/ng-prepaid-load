@@ -1,12 +1,20 @@
 <html>
   <head>
     <title>Prepaid Loading Station</title>
+
+    <style type="text/css">
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+      }
+    </style>
   </head>
 
   <body ng-app="LoadCentral" ng-cloak>
     <div ng-controller="LoadController">
-      <h2>&nbsp;</h2>
+      <h4>&nbsp;</h4>
       <div class='container'>
+        <h2> Prepaid Loading Station </h2>
+        <br/>
         <div class="container col-md-4 load-option">
           <div class="panel panel-warning">
             <div class="panel-heading">
@@ -65,10 +73,12 @@
         <div id="congrats-div" ng-show="showMessage">
           <h3 class="text-success">&#10004; Congratulations!</h3>
           <span class="text-success">
-            Successfully loaded <b> {{ successNumber }} </b> worth of load to <b> {{ successAmount }} </b> 
+            Successfully loaded Php <b> {{ successAmount }} </b> worth of load to <b> {{ successNumber }} </b> 
           </span>
         </div>
 
+        <br/>
+        <br/>
         <h3> Loading History </h3>
         <table class="table table-bordered">
           <tr>
@@ -84,7 +94,9 @@
       </div>
     </div>
 
-
+    <div ng-view></div>
+    <a href='#/hello'>.</a>
+    
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
 
@@ -93,6 +105,8 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="app/js/app.js"></script>
+
     <script src="app/js/load_controller.js"></script>
+    <script src="app/js/hello_controller.js"></script>
   </body>
 </html>
